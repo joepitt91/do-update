@@ -4,7 +4,7 @@
 # copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
 export TERM=${TERM:-dumb}
 clear
-echo 'do-update 1.3. 2016-01-06. Copyright (c) Joe Pitt, www.joepitt.co.uk'
+echo 'do-update 1.4. 2016-06-19. Copyright (c) Joe Pitt, www.joepitt.co.uk'
 sudo echo
 echo 'Updating Package List...'
 sudo apt-get update -y > /dev/null 2>&1
@@ -15,8 +15,7 @@ sudo apt-get dist-upgrade -y > /dev/null 2>&1
 echo 'Removing Unneeded Packages...'
 sudo apt-get autoremove -y > /dev/null 2>&1
 
-reboot=`file /var/run/reboot-required | grep "ERROR" | wc -l`
-if [ $reboot == "0" ]; then
+if [ -a /var/run/reboot-required ]; then
 	if [ "$1" == "-y" ]; then
 		echo "Rebooting System..."
 		sleep 1
