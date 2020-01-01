@@ -27,8 +27,8 @@ fi
 
 echo 'do-update v1.6 (2020-01-01)  Copyright (C) 2020  Joe Pitt'
 echo 'This program comes with ABSOLUTELY NO WARRANTY.'
-echo 'This is free software, and you are welcome to redistribute it under certain conditions; see ' \
-' https://www.gnu.org/licenses/gpl-3.0.txt for details.'
+echo 'This is free software, and you are welcome to redistribute it under certain conditions; see '\
+'https://www.gnu.org/licenses/gpl-3.0.txt for details.'
 
 if ! hash apt-get 2>/dev/null; then
 	echo "do-update only works with apt-get, however, this system does not use apt-get."
