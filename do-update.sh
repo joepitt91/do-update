@@ -102,7 +102,7 @@ if [ -a /var/run/reboot-required ]; then
 		echo "Rebooting System..."
 		logger '[Info] do-update: Reboot needed, -y flag set, rebooting now'
 		sleep 1
-		reboot >/dev/null 2>&1
+		/sbin/reboot >/dev/null 2>&1
 	elif [ "$1" == "-n" ]; then
 		echo "Done. Reboot Required!"
 		logger '[Notice] do-update: Reboot needed, -n flag set, not rebooting'
@@ -113,7 +113,7 @@ if [ -a /var/run/reboot-required ]; then
 			echo "Rebooting System..."
 			logger '[Info] do-update: Reboot needed, user requested reboot, rebooting now'
 			sleep 1
-			reboot >/dev/null 2>&1
+			/sbin/reboot >/dev/null 2>&1
 		else
 			logger '[Notice] do-update: Reboot needed, user declined reboot, not rebooting'
 		fi
